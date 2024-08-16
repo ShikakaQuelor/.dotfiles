@@ -1,6 +1,10 @@
-export ZSH="$HOME/.oh-my-zsh"
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+setopt prompt_subst
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
 
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
