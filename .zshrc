@@ -52,5 +52,5 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-PATH=~/.console-ninja/.bin:$PATH
+
 export PATH="$PATH:$(go env GOPATH)/bin"
