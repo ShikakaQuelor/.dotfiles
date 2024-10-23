@@ -16,6 +16,12 @@ bindkey '^j' down-line-or-search
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# fzf
+eval "$(fzf --zsh)"
+
+# eza
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
 # Docker
 alias dco="docker compose"
 alias dps="docker ps"
