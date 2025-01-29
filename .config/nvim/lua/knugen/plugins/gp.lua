@@ -16,7 +16,7 @@ return {
 					provider = "azure",
 					chat = true,
 					command = true,
-					model = { model = "gpt-4", temperature = 1.1, top_p = 1 },
+					model = { model = "gpt-4o", temperature = 1.1, top_p = 1 },
 					system_prompt = require("gp.defaults").chat_system_prompt,
 				},
 			},

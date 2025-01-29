@@ -1,10 +1,19 @@
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zshenv
 
 setopt prompt_subst
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
+
+HISTFILE=$HOME/.zhistory
+SAVEHIST=10000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
@@ -50,13 +59,5 @@ alias l="ls -la"
 alias ..="cd .."
 alias ...="cd ../.."
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# bun completions
-[ -s "/Users/knugen/.bun/_bun" ] && source "/Users/knugen/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 
 export PATH="$PATH:$(go env GOPATH)/bin"

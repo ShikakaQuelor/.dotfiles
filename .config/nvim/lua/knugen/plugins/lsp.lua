@@ -29,7 +29,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-				"tsserver",
+				"ts_ls",
 				"gopls",
 			},
 			handlers = {
@@ -75,7 +75,7 @@ return {
 						settings = {
 							Lua = {
 								diagnostics = {
-									globals = { "vim", "it", "describe", "before_each", "after_each" },
+									globals = { "vim", "it", "describe", "before_each", "after_each", "ngx" },
 								},
 							},
 						},
